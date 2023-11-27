@@ -1,0 +1,64 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background: linear-gradient(to bottom, rgb(130, 130, 221), rgb(199, 199, 221));
+    height: 100vh;
+}
+
+header h1 {
+    display: flex;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    height: 80px;
+    width: 100%;
+    padding-top: 4%;
+    background-image: url("https://images.newscientist.com/wp-content/uploads/2022/05/27171835/SEI_106677849.jpg");
+    color: white;
+    font-weight: 800;
+}
+
+.tab {
+    overflow: hidden;
+    display: flex;
+    padding: 0px 50px;
+}
+
+.tablinks {
+    padding: 10px 20px;
+    margin-left: 40px;
+    background-color: #18215e;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border: 0.5px solid #8b99f6;
+    margin-top: 10px;
+    color: white;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.tablinks:hover,
+.active {
+    background-color: #5b6acb;
+}
+
+.tabcontent {
+    display: none;
+    margin: 7% 20%;
+    text-align: justify;
+    outline: none;
+    border: none;
+}
+
+#submit {
+    margin-left: 15%;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}

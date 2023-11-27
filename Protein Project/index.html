@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protein Interaction Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Protien Interaction Calculator</h1>
+    </header>
+    <?php include 'disulphide.php';?>
+    <div class="tab">
+        <button class="tablinks active" onclick="protein(event, 'Home')">Home</button>
+        <button class="tablinks" onclick="protein(event, 'Disulphide')">Disulphide</button>
+        <button class="tablinks" onclick="protein(event, 'Hydrophobic')">Hydrophobic</button>
+        <button class="tablinks" onclick="protein(event, 'Cation-Pi')">Cation-Pi</button>
+        <button class="tablinks" onclick="protein(event, 'Ionic Int')">Ionic</button>
+        <button class="tablinks" onclick="protein(event, 'Hydrophylic')">Hydrophylic</button>
+        <button class="tablinks" onclick="protein(event, 'Aromatic-Aromatic')">Aromatic-Aromatic</button>
+        <button class="tablinks" onclick="protein(event, 'Aromatic-Sulphur')">Aromatic-Sulphur</button>
+        <button class="tablinks" onclick="protein(event, 'Hydrogen bond')">Hydrogen bond</button>
+    </div>
+    <div id="Home" class="tabcontent active" style="display: block; background-color: transparent;">
+        <img src="data:image/jpeg;base64,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"
+            style="margin-left: -20%; border-radius: 5px; width: 25%; height: 25%;margin-left: -10%;">
+        <h1 style="margin-top: -25.5%;margin-left: 30%;">Protien Interaction Calculator</h1><br>
+        <p style="margin-left: 30%;margin-top: 2%;">Protein Interactions Calculator (PIC) is a server which recognizes
+            various kinds of interactions; such as disulphide bonds,
+            hydrophobic interactions, ionic interactions, hydrogen bonds, aromatic- aromatic interactions,
+            aromatic-sulphur
+            interactions and cation - π interactions within a protein or between proteins in a complex. <br><br>
+            It also determines the accessible surface area as well as the distance of a residue from the surface of the
+            protein.
+            The input should be in the Protein data bank(.pdb) format.
+            Interactions are calculated based on empirical or semi-empirical set of rules.</p>
+    </div>
+    <div id="Disulphide" class="tabcontent">
+        <h1>Disulphide Interaction</h1><br>
+        <input type="file" id="file-input" onclick="pdb()">
+        <input type="submit" value="submit" style="height: 3vh;width: 8%"><br> <br>
+        <p>Enter the interaction cut-off value
+            <input type="number"
+                style="height: 3vh;width: 5%; margin-bottom: 2.5%;margin-left: 1.5%;margin-right: 1%;">Default(4.5A)
+        </p>
+        <p>A disulfide bond is a covalent bond, usually derived by the coupling of two
+            thiol groups. The linkage is also called an SS-bond or disulfide bridge. The overall
+            connectivity is therefore C-S-S-C. <br><br> The other sulfur-containing amino acid,
+            methionine, cannot form disulfide bonds. The prototype of a protein disulfide bond is
+            the two-amino-acid peptide, cystine, which is composed of two cysteine amino acids
+            joined by a disulfide bond Pairs of cysteines (sulphur atoms) within 2.2Å are
+            considered as disulphide bridges.</p>
+    </div>
+    <div id="Hydrophobic" class="tabcontent">
+        <h1>Hydrophobic Interaction</h1><br>
+        <input type="file" id="file-input" onclick="pdb()">
+        <input type="submit" value="submit" style="height: 3vh;width: 8%"><br> <br>
+        <p>Enter the interaction cut-off value
+            <input type="number"
+                style="height: 3vh;width: 5%; margin-bottom: 2.5%;margin-left: 1.5%;margin-right: 1%;">Default(4.5A)
+        </p>
+        <p>Hydrophobic interactions are the most important non-covalent forces that will
+            cause the linear polypeptide to fold into a compact structure. The hydrophobic
+            (literally, 'water-hating') effect is named for the tendency of certain oil-like
+            substances to avoid contact with water (proverbially, 'oil and water don't mix'). <br><br>It is
+            generally understood to be the driving force responsible for the folding of proteins.
+            The aggregation of the hydrophobic surfaces gives the tightly packed core of a
+            protein. The following residues are considered to participate in interactions if they fall
+            within 5Å range: ALA, VAL, LEU, ILE, MET, PHE, TRP, PRO, TYR.</p>
+    </div>
+    <div id="Cation-Pi" class="tabcontent">
+        <h1>Cation-Pi Interaction</h1><br>
+        <input type="file" id="file-input" onclick="pdb()">
+        <input type="submit" value="submit" style="height: 3vh;width: 8%"><br> <br>
+        <p>Enter the interaction cut-off value
+            <input type="number"
+                style="height: 3vh;width: 5%; margin-bottom: 2.5%;margin-left: 1.5%;margin-right: 1%;">Default(4.5A)
+        </p>
+        <p>Cation-pi interaction is a non-covalent molecular interaction between phase
+            of an electron rich system (e.g. benzene, ethylene and acetylene) and adjacent cation
+            (e.g. Na+ and Li+). <br><br>The arginine side chain can participate in multiple interactions,
+            providing a mechanism for inter-protein specificity. The interaction is an example for
+            non covalent bonding between monopole and quadrupole. The following residues are
+            considered to participate in interactions if they fall within 6Å range: ARG, LYS,
+            PHE, TRP, TYR.</p>
+    </div>
+    <div id="Ionic Int" class="tabcontent">
+        <h1>Ionic Interaction</h1><br>
+        <input type="file" id="file-input" onclick="pdb()">
+        <input type="submit" value="submit" style="height: 3vh;width: 8%"><br> <br>
+        <p>Enter the interaction cut-off value
+            <input type="number"
+                style="height: 3vh;width: 5%; margin-bottom: 2.5%;margin-left: 1.5%;margin-right: 1%;">Default(4.5A)
+        </p>
+        <p>At any pH, protein have charged group that may participate in binding them to
+            each other or two other type of molecules. Ionic interactions are often thought of as
+            "strong" by virtue of their strength in vacuum, but are relatively weak in an aqueous
+            environment. <br><br> For a protein molecule, the majority of charged groups are at the
+            surface of the folded protein, where they are solvated and neutralized by counter ions
+            of the salts present in the solution. Occasionally, there are ion pairs buried in the
+            protein interior that can contribute to stabilization of folding because the local
+            dielectric constant D is much lower in the hydrophobic interior of the protein.<br><br></p>
+    </div>
+    <div id="Hydrophylic" class="tabcontent">
+        <h1>Hydrophylic Interaction</h1><br>
+        <input type="file" id="file-input" onclick="pdb()">
+        <input type="submit" value="submit" style="height: 3vh;width: 8%"><br> <br>
+        <p>Enter the interaction cut-off value
+            <input type="number"
+                style="height: 3vh;width: 5%; margin-bottom: 2.5%;margin-left: 1.5%;margin-right: 1%;">Default(4.5A)
+        </p>
+        Hydrophilicity also comes from the Greek word Hydro (water) and Philicity
+        (friendship) it refers to a physical property of a material that can transiently bond with
+        water (H2O) through hydrogen bonding. Furthermore it allows the liquid to enter the
+        pores of a material and totally wet it. <br> <br>Substances that bond to water are considered
+        hydrophilic or “water loving” When water is placed on these substances they form a
+        small contact angle. The evaluation of hydrophilicity is made through water contact
+        angle measurements. A water droplet would occupy as long surface of the hydrophilic
+        material as possible.<br> <br> So the water contact angle will be significantly low. This type of
+        interaction involves hydrophilic amino acids interacting with each other. Example for
+        hydrophilic amino acids interacting are arginine, aspargine, aspartate, glutamine,
+        histidine, lysine, serine, threonine, glutamate.
+    </div>
+    <div id="Aromatic-Aromatic" class="tabcontent">
+        <h1>Aromatic-Aromatic Interaction</h1><br>
+        <input type="file" id="file-input" onclick="pdb()">
+        <input type="submit" value="submit" style="height: 3vh;width: 8%"><br> <br>
+        <p>Enter the interaction cut-off value
+            <input type="number"
+                style="height: 3vh;width: 5%; margin-bottom: 2.5%;margin-left: 1.5%;margin-right: 1%;">Default(4.5A)
+        </p>
+        <p>This type of interaction occurs between two aromatic amino acids, e.g.: The
+            interaction involving phenyl alanine and tryptophan. Hydrogen atoms present in
+            aromatic rings takes part in this interaction. The electrons of the aromatic rings are
+            localised on both sides of the flat ring, so that there is a small partial negative charge
+            on the face, and a small partial positive charge on the hydrogen on the edge, which
+            gives the possibility of electrostatic interactions. <br> <br>This type of interaction is present
+            between side chains of 50-60% of the aromatic amino acids. Side chain aromatic rings
+            tend to stack with edge to face at an angle of 60-90° in about 2 out of 3 interactions;
+            when they stack face to face the rings are offset so that the partial charges may
+            interact. <br> <br> The binding energy is of the order of 1-2 kcal mol-1. The contribution of free
+            energy to protein stability is estimated to be relatively small and of the order of 0.6-
+            1.3 kcal mol-1.</p>
+    </div>
+    <div id="Aromatic-Sulphur" class="tabcontent">
+        <h1>Aromatic-Sulphur Interaction</h1><br>
+        <input type="file" id="file-input" onclick="pdb()">
+        <input type="submit" value="submit" style="height: 3vh;width: 8%"><br> <br>
+        <p>Enter the interaction cut-off value
+            <input type="number"
+                style="height: 3vh;width: 5%; margin-bottom: 2.5%;margin-left: 1.5%;margin-right: 1%;">Default(4.5A)
+        </p>
+        <p>This type of interaction occurs between an aromatic amino acid and sulphur
+            containing amino acid, e.g.: The interaction involving phenyl alanine and cystine.
+            Hydrogen atoms of aromatic ring and sulphur atoms of cystine take part in this
+            interaction. <br> <br> The sulphur atom can interact favourably with an aromatic ring via an SK interaction
+            and they are commonly observed at the hydrophobic cores of protein
+            and may contribute towards protein stability.</p>
+        <script language="JavaScript" type="text/javascript">src = "/cgi-bin/query/aromaticSulphur.pl"</script>
+    </div>
+    <div id="Hydrogen bond" class="tabcontent">
+        <h1>Hydrogen bond Interaction</h1><br>
+        <input type="file" id="file-input" onclick="pdb()">
+        <input type="submit" value="submit" style="height: 3vh;width: 8%"><br> <br>
+        <p>Enter the interaction cut-off value
+            <input type="number"
+                style="height: 3vh;width: 5%; margin-bottom: 2.5%;margin-left: 1.5%;margin-right: 1%;">Default(4.5A)
+        </p>
+        <p>Hydrogen bonding is the covalent bond formed between oxygen atom and
+            hydrogen atom of amide groups. It is one of the difficult interactions to be identified
+            due to the presence of main chain and side chain hydrogen atoms. Hydrogen bonds
+            provide most of the directional interactions that underpin protein folding, protein
+            structure and molecular recognition. <br><br> The core of most protein structures is composed
+            of secondary structures such as α helix and β sheet. This satisfies the hydrogenbonding potential between
+            main chain carbonyl oxygen and amide nitrogen buried in
+            the hydrophobic core of the protein</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

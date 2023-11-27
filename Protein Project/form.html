@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protein Interaction Calculator</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <form action="login.php" method="post">
+        <h2 style="text-align: center;">User login</h2>
+        <img src="https://icon-library.com/images/username-icon-png/username-icon-png-19.jpg"
+            style="width: 27px;height: 27px; margin-top: 15%;margin-left: 20%;">
+        <input type="text" id="username" placeholder="Username" class="inputbox"
+            style="margin-top: -10%; margin-left: 35%;width: 47%;" required class="js-input1" name="email">
+        <hr>
+        <img src="https://icon-library.com/images/icon-password/icon-password-13.jpg"
+            style="width: 27px;height: 25px; margin-top: 11%;margin-left: 20%;">
+        <input type="password" id="password" placeholder="Password" class="inputbox"
+            style="margin-top: -10%;margin-left: 35%;width: 47%;" required class="js-input2" name="password">
+        <hr>
+        <div>
+            <br>
+            <input type="submit" value="login" onclick="Redirect(event)" class="center">
+        </div>
+    </form>
+    <script src="form.js"></script>
+</body>
+</html>
